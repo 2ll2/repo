@@ -52,3 +52,15 @@ repo $ docker build \
 
 repo $ docker push 2ll2/repo-virtualbox:v3.7-abcdef1-x86_64
 ```
+
+To extract repository from a docker image (using repo-virtualbox as an example)
+
+```
+$ docker run -v /tmp:/tmp --rm -ti 2ll2/repo-virtualbox:v3.7-abcdef1-x86_64
+
+# cp -r /home/builder/repo/virtualbox /tmp/repo-virtualbox
+
+repo$ sudo mv /tmp/repo-virtualbox virtualbox
+
+repo$ sudo chown -R 500:500 virtualbox
+```
