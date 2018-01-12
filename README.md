@@ -38,14 +38,14 @@ To build the docker image
 ```
 $ cd repo
 
-repo $ docker build \
+repo $ docker build --squash \
         --build-arg overlay=<REPO_NAME> \
         --build-arg version=<VERSION> \
         -t 2ll2/repo-<REPO_NAME>:<VERSION>-<SHORT_SHA>-<ARCH1>.<ARCH2> .
 
 (For example)
 
-repo $ docker build \
+repo $ docker build --squash \
         --build-arg overlay=virtualbox \
         --build-arg version=v3.7 \
         -t 2ll2/repo-virtualbox:v3.7-abcdef1-x86_64 .
